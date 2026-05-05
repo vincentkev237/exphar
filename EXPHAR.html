@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPHAR - Pharmacie en ligne</title>
+    <link rel="stylesheet" href="EXPHAR.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo" onclick="showSection('home')">
+                <img src="EXPHAR1.jpg" style="width: 100px;height: 70px;">
+                EXPHAR <span>Socialites</span>
+            </a>
+            <div class="menu-toggle"></div>
+            <nav class="nav-links">
+                <a href="#" onclick="showSection('home')" id="nav-home" class="active">Accueil</a>
+                <a href="#" onclick="showSection('shop')" id="nav-shop">Médicaments</a>
+                <a href="#" onclick="showSection('forum')" id="nav-forum">Forum </a>
+            </nav>
+            <div class="cart-icon" onclick="openCart()">
+                🛒
+                <div class="cart-badge" id="cart-count">0</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!--Acceuil-->
+        <section id="home" class="active">
+            <div class="hero">
+                <h1>Votre santé, notre priorité chez EXPHAR</h1>
+                <p>Découvrez nos produits pharmaceutiques de qualité. Commandez facilement et payez rapidement avec Orange Money ou MTN Mobile Money.</p>
+                <button class="btn btn-white" onclick="showSection('shop')">Commander maintenant</button>
+            </div>
+            
+            <div style="padding: 60px 0;">
+                <div class="section-title">
+                    <h2>Pourquoi choisir EXPHAR ?</h2>
+                    <p>Des solutions accessibles et fiables</p>
+                    <p> car votre santes est notre priorites</p>
+                </div>
+                <div class="products-grid" style="text-align: center;">
+                    <div style="padding: 20px;">
+                        <h3 style="color:var(--primary-color); margin-bottom:10px;">🚀 Livraison Rapide</h3>
+                        <p>Recevez vos commandez en moins de 24h partout dans le pays.</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color:var(--primary-color); margin-bottom:10px;">🔒 Paiement Sécurisé</h3>
+                        <p>Transactions via Orange Money et MTN Money 100% sécurisées.</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color:var(--primary-color); margin-bottom:10px;">💬 Communauté</h3>
+                        <p>Échangez avec des experts et d'autres patients sur notre forum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- achat produits -->
+        <section id="shop">
+            <div class="section-title">
+                <h2>Notre Catalogue</h2>
+                <p>Les produits essentiels pour votre bien-être</p>
+            </div>
+            <div class="products-grid" id="products-container">
+                <!-- Products will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- forume de discution -->
+        <section id="forum">
+            <div class="section-title">
+                <h2>Forum de la Santé</h2>
+                <p>Discutez, partagez et apprenez ensemble</p>
+            </div>
+            <div class="forum-layout">
+                <div class="forum-list">
+                    <div class="forum-post">
+                        <div class="post-header">
+                            <strong>Dr. Kouassi</strong>
+                            <span>Il y a 2 heures</span>
+                        </div>
+                        <h3 class="post-title">L'importance de l'hydratation en saison sèche</h3>
+                        <p class="post-content">N'oubliez pas de boire au moins 2L d'eau par jour. Cela aide à prévenir les maux de tête et la fatigue chronique...</p>
+                        <div class="post-actions">
+                            <a href="#">💬 12 Commentaires</a>
+                            <a href="#">❤️ J'aime</a>
+                        </div>
+                    </div>
+                    <div class="forum-post">
+                        <div class="post-header">
+                            <strong>Sarah M.</strong>
+                            <span>Il y a 5 heures</span>
+                        </div>
+                        <h3 class="post-title">Conseils pour bien dormir</h3>
+                        <p class="post-content">Je cherche des conseils naturels pour améliorer mon sommeil sans utiliser de somnifères lourds. Avez-vous des astuces ?</p>
+                        <div class="post-actions">
+                            <a href="#">💬 34 Commentaires</a>
+                            <a href="#">❤️ J'aime</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside>
+                    <div class="new-post-box">
+                        <h3 style="margin-bottom: 20px;">Nouveau Sujet</h3>
+                        <form id="forum-form">
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="form-control" placeholder="Sujet de votre discussion" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Votre message..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Publier</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- pieds  -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>EXPHAR</h3>
+                    <p>Votre partenaire de confiance pour les soins pharmaceutiques en ligne.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#" onclick="showSection('home')">Accueil</a></li>
+                        <li><a href="#" onclick="showSection('shop')">Boutique</a></li>
+                        <li><a href="#" onclick="showSection('forum')">Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📞 +237 94 92 03 01</li>
+                        <li>📧 Ngankiohypolite@gmail.com</li>
+                        <li>📍 Cameroun,bafoussam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="annee" style="color:red;">2024</span> EXPHAR. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!--  panier Modele -->
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal">
+            <span class="close-modal" onclick="closeCart()">&times;</span>
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Votre Panier</h2>
+            
+            <div class="cart-items" id="cart-items-container">
+                <p style="text-align:center; color:#777;">Votre panier est vide.</p>
+            </div>
+
+            <div class="cart-total" id="cart-total-container" style="display:none;">
+                <span>Total à payer:</span>
+                <span id="cart-total-price">0 FCFA</span>
+            </div>
+
+            <div id="checkout-section" style="display:none;">
+                <h3 style="font-size:1rem; margin-bottom:10px;">Mode de paiement :</h3>
+                <div class="payment-methods">
+                    <div class="payment-method pm-om" onclick="selectPayment('om', this)">
+                        Orange Money
+                    </div>
+                    <div class="payment-method pm-mtn" onclick="selectPayment('mtn', this)">
+                        MTN Money
+                    </div>
+                </div>
+
+                <!-- payement orange money -->
+                <div id="form-om" class="payment-form">
+                    <p style="font-size:0.9rem; margin-bottom:10px;">Vous serez redirigé vers l'application Orange Money.</p>
+                    <div class="form-group">
+                        <label>Numéro Orange Money</label>
+                        <input type="tel" class="form-control" placeholder="ex: 07 00 00 00 00">
+                    </div>
+                    <button class="btn btn-primary" style="background:var(--orange-money); width:100%;" onclick="processPayment()">Payer avec OM</button>
+                </div>
+
+                <!-- payement mtn -->
+                <div id="form-mtn" class="payment-form">
+                    <p style="font-size:0.9rem; margin-bottom:10px;">Entrez votre code PIN pour valider.</p>
+                    <div class="form-group">
+                        <label>Numéro MTN</label>
+                        <input type="tel" class="form-control" placeholder="ex: 05 00 00 00 00">
+                    </div>
+                    <button class="btn btn-primary" style="background:#FFCC00; color:black; width:100%;" onclick="processPayment()">Payer avec MTN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast">Action effectuée avec succès !</div>
+
+    <!-- JavaScript Logic -->
+    <script src="EXPHAR.js" > </script>
+</body>
+</html>
